@@ -15,8 +15,6 @@ app.use(
         origin: "*"
     })
 );
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
 
 dotenv.config();
 app.use(express.json());
