@@ -17,14 +17,20 @@ app.use(
         origin: "*"
     })
 );
+
 app.use(express.json({limit: '50mb'}));
 app.use(express.urlencoded({extended: true, limit: '50mb'}))
 
 dotenv.config();
 app.use("/images", express.static(path.join(__dirname, "/images")))
-app.get('/*', function (req, res) {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
-  });
+
+// app.get('/*', function(req, res) {
+//     res.sendFile(path.join(__dirname, 'path/to/your/index.html'), function(err) {
+//       if (err) {
+//         res.status(500).send(err)
+//       }
+//     })
+//   })
 
 mongoose.set('strictQuery', true);
 mongoose.connect(process.env.MONGO_URI, {
