@@ -59,5 +59,5 @@ app.use("/api/posts", postRoute)
 app.use("/api/categories", categoryRoute)
 
 app.listen(PORT, '0.0.0.0', () => {
-    console.log(`Server Started at Port ${PORT}`)
+    console.log(`Server started at port ${PORT}`)
  });
