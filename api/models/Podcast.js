@@ -2,16 +2,16 @@ const mongoose = require ("mongoose")
 
 const PodcastSchema = new mongoose.Schema(
 {
-    titlePodcast: {
+    title: {
         type: String,
         required: true,
         unique: true,
     },
-    descPodcast: {
+    desc: {
         type: String,
         required: true,
     },
-    videoPodcast: {
+    photo: {
         type: String,
         required: false,
     },
