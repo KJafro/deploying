@@ -11,6 +11,14 @@ const PodcastSchema = new mongoose.Schema(
         type: String,
         required: true,
     },
+    desc2: {
+        type: String,
+        required: true,
+    },
+    desc3: {
+        type: String,
+        required: true,
+    },
     photo: {
         type: String,
         required: false,
