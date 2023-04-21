@@ -7,7 +7,6 @@ const userRoute = require ("./routes/users")
 const postRoute = require ("./routes/posts")
 const podcastRoute = require ("./routes/podcasts")
 const categoryRoute = require ("./routes/categories")
-const subscribeRoute = require ("./routes/subscribe")
 const multer = require("multer")
 const webpush = require("web-push");
 const bodyParser = require("body-parser");
@@ -82,7 +81,6 @@ app.use("/api/users", userRoute)
 app.use("/api/posts", postRoute)
 app.use("/api/podcasts", podcastRoute)
 app.use("/api/categories", categoryRoute)
-app.use("/api/subscribe", subscribeRoute)
 
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server started at port ${PORT}`)
