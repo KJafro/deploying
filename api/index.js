@@ -8,10 +8,32 @@ const postRoute = require ("./routes/posts")
 const podcastRoute = require ("./routes/podcasts")
 const categoryRoute = require ("./routes/categories")
 const multer = require("multer")
+const webpush = require("web-push");
+const bodyParser = require("body-parser");
 const path = require("path")
 const cors = require ("cors")
 const PORT = process.env.PORT || 5000;
 const cloudinary = require('./cloudinary/cloudinary').v2;
+app.use(bodyParser.json());
+
+const publicVapidKey =
+  "BJthRQ5myDgc7OSXzPCMftGw-n16F7zQBEN7EUD6XxcfTTvrLGWSIG7y_JxiWtVlCFua0S8MTB5rPziBqNx1qIo";
+const privateVapidKey = "3KzvKasA2SoCxsp0iIG_o9B0Ozvl1XDwI63JRKNIWBM";
+
+webpush.setVapidDetails(
+  "mailto:test@test.com",
+  publicVapidKey,
+  privateVapidKey
+);
+
+app.post("/subscribe", (req, res) => {
+    const subscription = req.body;
+    res.status(201).json({});
+    const payload = JSON.stringify({ title: "Yesss" });
+    webpush
+      .sendNotification(subscription, payload)
+      .catch(err => console.error(err));
+  });
 
 app.use(
     cors({
