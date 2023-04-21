@@ -7,6 +7,7 @@ const userRoute = require ("./routes/users")
 const postRoute = require ("./routes/posts")
 const podcastRoute = require ("./routes/podcasts")
 const categoryRoute = require ("./routes/categories")
+const subscribeRoute = require ("./routes/subscribe")
 const multer = require("multer")
 const webpush = require("web-push");
 const bodyParser = require("body-parser");
@@ -15,25 +16,6 @@ const cors = require ("cors")
 const PORT = process.env.PORT || 5000;
 const cloudinary = require('./cloudinary/cloudinary').v2;
 app.use(bodyParser.json());
-
-const publicVapidKey =
-  "BJthRQ5myDgc7OSXzPCMftGw-n16F7zQBEN7EUD6XxcfTTvrLGWSIG7y_JxiWtVlCFua0S8MTB5rPziBqNx1qIo";
-const privateVapidKey = "3KzvKasA2SoCxsp0iIG_o9B0Ozvl1XDwI63JRKNIWBM";
-
-webpush.setVapidDetails(
-  "mailto:test@test.com",
-  publicVapidKey,
-  privateVapidKey
-);
-
-app.post("/subscribe", (req, res) => {
-    const subscription = req.body;
-    res.status(201).json({});
-    const payload = JSON.stringify({ title: "Yesss" });
-    webpush
-      .sendNotification(subscription, payload)
-      .catch(err => console.error(err));
-  });
 
 app.use(
     cors({
@@ -76,11 +58,31 @@ app.post("/api/upload", upload.single("file"), (req,res) => {
     res.status(200).json("File successfully uploaded!");
 });
 
+const publicVapidKey =
+  "BJthRQ5myDgc7OSXzPCMftGw-n16F7zQBEN7EUD6XxcfTTvrLGWSIG7y_JxiWtVlCFua0S8MTB5rPziBqNx1qIo";
+const privateVapidKey = "3KzvKasA2SoCxsp0iIG_o9B0Ozvl1XDwI63JRKNIWBM";
+
+webpush.setVapidDetails(
+  "mailto:test@test.com",
+  publicVapidKey,
+  privateVapidKey
+);
+
+app.post("/subscribe", (req, res) => {
+    const subscription = req.body;
+    res.status(201).json({});
+    const payload = JSON.stringify({ title: "Yesss" });
+    webpush
+      .sendNotification(subscription, payload)
+      .catch(err => console.error(err));
+  });
+
 app.use("/api/auth", authRoute)
 app.use("/api/users", userRoute)
 app.use("/api/posts", postRoute)
 app.use("/api/podcasts", podcastRoute)
 app.use("/api/categories", categoryRoute)
+app.use("/api/subscribe", subscribeRoute)
 
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server started at port ${PORT}`)
