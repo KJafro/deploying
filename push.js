@@ -7,8 +7,8 @@ var push = require('web-push')
 //   }
 
   let vapidKeys = {
-    publicKey: 'BLQGq3C889qOEdVcZnGaur0qq3yO5U3fycxvVpKjqTKIj2dhb4nPSpOcVJmcPKnAfovGs0mKi0Igb0Vu5GIdJcs',
-    privateKey: 'mQfIB985VQ3NEsS3bTPIj-_NFdoqYLDqo_0H2nYCdtc'
+    publicKey: 'BJS9nbbpOTGKcGUeXS8oVw5tzcsapDY0Dc28qUQhayBI19-cCcBanEl6VQYJ6wePLaDn0WbVABMpF_pgTZ9oyBA',
+    privateKey: 'Ww3-1640vASZk-Vr2Aqulq0WzgEDrgBD1tjTxZ6pRa4'
   }
 
   push.setVapidDetails("mailto: Kurtjeffries@yahoo.com", vapidKeys.publicKey, vapidKeys.privateKey)
@@ -77,10 +77,30 @@ let sub5 = {
     }
 }
 
+let sub6 = {
+    endpoint:"https://fcm.googleapis.com/fcm/send/fHndDj0v5io:APA91bGGg_WmNUdAW_Uvhkd-jARZmBaDpdaUUN0nYnW2EUBlYmZxWtd4LTMNNqRGEaBY1cobDumBDFSAe4bFtCKKOxeq5mHnloCu7sWCmVqkWHwa_PlclbRZaFGOOMAolg5kkEqiO1pn",
+    expirationTime: null,
+    keys:{
+        p256dh:"BJ6Jsi8-iC_POdlrcFRUZ5emDDBcIn4DqUXsguHw4Ma1IO-eFNiSEaDHakieMxx_xhzU-Md1k71Un8NNsN4JOWA",
+        auth:"75f9sExqkexqWRqeE95B-A"
+    }
+}
+
+let sub7 = {
+    endpoint:"https://wns2-ln2p.notify.windows.com/w/?token=BQYAAAAMOjX5P602X7sLjcLFv%2biB2Sdf7n8ahV5rEbc5jRwaPV5ch8uWvh2pPofhsOGclI5kKUZFra2b5GINXya5QpZ0r8Yoi9NKcAno7sxfrv9%2bBRTfp7r22rQK%2fgCR3%2f17g3vB9vSaViqOesiTIHCcqN%2blbw2b3fm2sUsezmyc0rS0cLwQZih6yn5h%2fYNRYh%2f1I7oADAlW30Z2JZEYmu5J0OdQRsAGsG5WZ2h23qPGyReQdtJ4P8sYRqZeXEjcz3s9T11a6jXWWlu6bnb74hlscWPBsdQxPjZNgojrMCUTq%2bj2YT%2f2hrgvJNMFJ%2fObirMp0VAqyJQMQjgiAnQrwdPEOsPI",
+    expirationTime :null,
+    keys:{
+        p256dh:"BIEiJSVqoCJHQzaoMfaSUUrEx-GbAALhg8kGloG8DB_x5D3u-noAcoM00l9o4T7qnNcHwvMSFVX2p4vnDsbLQUw",
+        auth:"OKp3hdIPkiwSiD-5QIM1fQ"
+    }
+}
+
 
 //   push.sendNotification(sub, 'testing message')
 //   push.sendNotification(sub1, 'testing message')
 //   push.sendNotification(sub2, 'testing message')
 //   push.sendNotification(sub3, 'testing message')
-  push.sendNotification(sub4, 'testing message')
-  push.sendNotification(sub5, 'testing message')
+//   push.sendNotification(sub4, 'testing message')
+//   push.sendNotification(sub5, 'testing message')
+//   push.sendNotification(sub6, 'testing message')
+  push.sendNotification(sub7, 'testing message')
