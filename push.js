@@ -57,6 +57,8 @@ let sub3 = {
     }
 }
 
+
+
 let sub4 = {
     endpoint:"https://wns2-ln2p.notify.windows.com/w/?token=BQYAAAC%2f8GAZYuwE4jk8NE1o%2bfKMXoxbQ5wEWFbe%2fb2dHk5UhoeEfKkdbvEQO5RQTsNKE1JN40%2ffu%2bCxMBoS%2bKaU%2fAfK7AWdK675mHC%2fBnx9k8HGHevUuO3DKxbG83mml3ru7UZjemYAAmDQX1iswNXALRVNR8DlZm8ynnqQyasdMK2iCmq3PkjWZ3g2Ox8QqQSsyjviehe9%2fwyfiA1nLoj2L%2fAJOySWKlo61gDSBMnSm50315ASY8MxeWV%2fvw3le3tCLY8A4SHLOFRxmfnUhKnSyv12Ng9%2bhw42xdaaOQNTOhh1zyyg5YsgycfEghrmiSUHUdZs6XzGTT9%2fjQAoLXQb45ob",
     expirationTime: null,
@@ -66,6 +68,14 @@ let sub4 = {
     }
 }
 
+let sub5 = {
+    endpoint:"https://fcm.googleapis.com/fcm/send/fS-W11grhK8:APA91bEbAyDjYdGQH1Mhh6mXxIuMg0rLXyEwW5gRh05m2eRZF0QVtj0YbuTH436drZ6G5qMFW_OKdagL4hX8pbVsztOG7Oitp5TjF3oB9rOkEJoZjFgtCjfRHNNnjHPighboFbBzzN9G",
+    expirationTime: null,
+    keys:{
+        p256dh:"BAs_wd_V0YIxiXH3yAicKvSKBF4-JVcIpvsSQ3oa63vDE7PmFzkYr-jFO23sANYAocITzTz7fuSl-KY5WRHKqY4",
+        auth:"0g2Dt0I8y6qbQtURG7L3vA"
+    }
+}
 
 
 //   push.sendNotification(sub, 'testing message')
@@ -73,3 +83,4 @@ let sub4 = {
 //   push.sendNotification(sub2, 'testing message')
 //   push.sendNotification(sub3, 'testing message')
   push.sendNotification(sub4, 'testing message')
+  push.sendNotification(sub5, 'testing message')
