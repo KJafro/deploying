@@ -95,6 +95,15 @@ let sub7 = {
     }
 }
 
+let sub8 = {
+    endpoint:"https://wns2-ln2p.notify.windows.com/w/?token=BQYAAABjPHNOt%2fDuO40HrzYJzdnY8xjIR7VI7sjVbLnnoC6INsrvPcXIfv1N2BCKOLyZc52GpsVvugotSaKYHCTZhHA7aefKKmbv40fV8Rhtk2%2fhT14usIlvmhRD4CxYiVwMV7eI1x5QMvLZNbyy%2fzCUmPG89fqYx75j2lGZiQV7FJL%2fhprnXYYTQg1ca0Qr038Cx8HWGqmyNafo5j2UEQspFEhQjgiyJUhw0d6bz5EArEgIjmjV0%2f5Dks21kT0YDG9cFkaprYA%2beshuFos%2feIPDtta4Lf0CBB%2fw2DSahwB5HHqUG7SfR4WWA5N6JWYbAYXs8v9mRsfP%2bPTUpiO5UuN%2fYXaQ",
+    expirationTime :null,
+    keys:{
+        p256dh:"BMlyCspm2Oc-N11yhOwWOo6b2baiK3SM0ZCbZVcqiQEXz9pZ9xzpMJUMCydHOPqebuAs-C2Ml98HrjcVXNVIk50",
+        auth:"HrwJW_hj8jBn1k6BmltLfA"
+    }
+}
+
 
 //   push.sendNotification(sub, 'testing message')
 //   push.sendNotification(sub1, 'testing message')
@@ -104,3 +113,4 @@ let sub7 = {
 //   push.sendNotification(sub5, 'testing message')
 //   push.sendNotification(sub6, 'testing message')
   push.sendNotification(sub7, 'testing message')
+  push.sendNotification(sub8, 'testing message')
