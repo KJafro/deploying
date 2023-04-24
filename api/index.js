@@ -57,9 +57,8 @@ app.post("/api/upload", upload.single("file"), (req,res) => {
     res.status(200).json("File successfully uploaded!");
 });
 
-const publicVapidKey =
-"BJthRQ5myDgc7OSXzPCMftGw-n16F7zQBEN7EUD6XxcfTTvrLGWSIG7y_JxiWtVlCFua0S8MTB5rPziBqNx1qIo";
-const privateVapidKey = "3KzvKasA2SoCxsp0iIG_o9B0Ozvl1XDwI63JRKNIWBM";
+const publicVapidKey = "BM0wVQoiwffifZXJTa1aLRyW2Y1roTvqIJatTeo8beWOPF_IAdLbtQp5bzfmAAVBofQm6avPuwBjQ31_ANkLVJE";
+const privateVapidKey = "0n5v0_EeOrYk1mT-XJmLAZbw7Zvgo4Ttk9jx1I_cIOo";
 
 webpush.setVapidDetails(
   "mailto:test@test.com",
