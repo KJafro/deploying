@@ -70,7 +70,7 @@ webpush.setVapidDetails(
 app.post("/subscribe", (req, res) => {
     const subscription = req.body;
     res.status(201).json({});
-    const payload = JSON.stringify({ title: "New Products!!!" });
+    const payload = JSON.stringify({ title: "New blog/podcast added!!!" });
     webpush
       .sendNotification(subscription, payload)
       .catch(err => console.error(err));
