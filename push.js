@@ -127,7 +127,14 @@ let sub11 = {
     }
 }
 
-
+let sub12 = {
+    endpoint:"https://fcm.googleapis.com/fcm/send/ePGarqusqQo:APA91bG-9YLSBjhsN7nNJVeMSx5lnufRrxxLuo9kQwcaIFPJWcyRNiFmknBbvqzKsDsF7tLh95i1-NJyJl0qzhY4ocHC8vfzmpYnqPnUulGUjXBp-D4ylmO1RQbxa9C8KoObeRf2opu9",
+    expirationTime: null,
+    keys:{
+        p256dh:"BHc2aB5z33iFLxXdDqn_tHbp7djdziXgqB7NhJs9MNhsoLsIXudnbYNZiIjdropmgcn6QQqqovLwIcFWArzbWDY",
+        auth:"A6-lYTZGicUko41yCInIXg"
+    }
+}
 
 
 
@@ -142,4 +149,4 @@ let sub11 = {
 //   push.sendNotification(sub8, 'testing message')
 //   push.sendNotification(sub9, 'testing message')
 //   push.sendNotification(sub10, 'testing message')
-  push.sendNotification(sub11, 'test')
+  push.sendNotification(sub12, '{}')
