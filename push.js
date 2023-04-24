@@ -19,4 +19,4 @@ let vapidKeys = {
 }
 
 
-  push.sendNotification(sub, 'testing message')
+  push.sendNotification(sub, '{}')
