@@ -1,15 +1,11 @@
 var push = require('web-push')
 
 
-// let vapidKeys = {
-//     publicKey: 'BOU-dlKoy3-aFElyPR4SLO8d6b4T7JvE9cAdiJJzKOiGysrvx6ddZ5FCwASvgCII1cWR4Aml3AKyRto33GSh16Q',
-//     privateKey: 'OUHyjmcDqBgsCDtrAeUGqQoAfRnKXCC-ibx6OyFrGBw'
-//   }
-
-  let vapidKeys = {
-    publicKey: 'BJS9nbbpOTGKcGUeXS8oVw5tzcsapDY0Dc28qUQhayBI19-cCcBanEl6VQYJ6wePLaDn0WbVABMpF_pgTZ9oyBA',
-    privateKey: 'Ww3-1640vASZk-Vr2Aqulq0WzgEDrgBD1tjTxZ6pRa4'
+let vapidKeys = {
+    publicKey: 'BJGjGQ-Cs8cIN7s-I87gIRt8K_oA-90iz4uQT7g0XoIWSq0gOhiCN0l8WwMi-rwWU8JtrpZXZ591ujl1G0nORss',
+    privateKey: '6qYb9YO4hOJF-wk6nL7cfwGjcNHyM62JV1lVUCE3c0g'
   }
+
 
   push.setVapidDetails("mailto: Kurtjeffries@yahoo.com", vapidKeys.publicKey, vapidKeys.privateKey)
 
@@ -96,13 +92,34 @@ let sub7 = {
 }
 
 let sub8 = {
-    endpoint:"https://wns2-ln2p.notify.windows.com/w/?token=BQYAAABjPHNOt%2fDuO40HrzYJzdnY8xjIR7VI7sjVbLnnoC6INsrvPcXIfv1N2BCKOLyZc52GpsVvugotSaKYHCTZhHA7aefKKmbv40fV8Rhtk2%2fhT14usIlvmhRD4CxYiVwMV7eI1x5QMvLZNbyy%2fzCUmPG89fqYx75j2lGZiQV7FJL%2fhprnXYYTQg1ca0Qr038Cx8HWGqmyNafo5j2UEQspFEhQjgiyJUhw0d6bz5EArEgIjmjV0%2f5Dks21kT0YDG9cFkaprYA%2beshuFos%2feIPDtta4Lf0CBB%2fw2DSahwB5HHqUG7SfR4WWA5N6JWYbAYXs8v9mRsfP%2bPTUpiO5UuN%2fYXaQ",
-    expirationTime :null,
+    endpoint:"https://updates.push.services.mozilla.com/wpush/v2/gAAAAABkRapMOgh_OrZ2WT-EwPycyIl3Bm2FwfHH8ysEJYEvq8RF54X5ikqgCnoITKJIMZUfPOiAp8d__mDi98dcm7YndpqRRuNHMaOBFlbI-IcwS10wIrdu29cV9dTerw2zAgu7Mu660WGkepX9TBOKoF-q7jPrbUnGLd1HV9G6dNbxIeEZEjE",
+    expirationTime: null,
     keys:{
-        p256dh:"BMlyCspm2Oc-N11yhOwWOo6b2baiK3SM0ZCbZVcqiQEXz9pZ9xzpMJUMCydHOPqebuAs-C2Ml98HrjcVXNVIk50",
-        auth:"HrwJW_hj8jBn1k6BmltLfA"
+        auth:"57A_Em6K3T1BfS85gTF2Qg",
+        p256dh:"BDK1RDZ86awp1W1se7xDec5RwUZYD1Fp1QX07EnhjJkuz2IwsX_3YZ2oQEKr9PPsa96HBqsZo7h9sxIBn_Ht1Yg"
     }
 }
+
+let sub9 = {
+    endpoint:"https://fcm.googleapis.com/fcm/send/dm97u10h6ys:APA91bF5AaAbp3Hn812_RAjJumTx4uBPniZ8bQxdQITpC0RbZ41JzLIVX17Rhq5sBdJ809ALH9GpAWgtR2TRTdgk7HxbtYrbPBbTMCjcx5ZZXSdzreQqzvIyuchOhxYhRVh0hgNcZiIu",
+    expirationTime: null,
+    keys:{
+        p256dh:"BGIH4j2B34lYKlHCiMa9BtA8AzZ0YsuNtiSAAOPe1IhmolKV72tbu_9imz4TZhofHuqoY4Ap9vMiKMay931rMJo",
+        auth:"os8of5dlPYo0iYSTPTISLA"
+    }
+}
+
+let sub10 = {
+    endpoint:"https://wns2-ln2p.notify.windows.com/w/?token=BQYAAADWBf9eLeAGr6wjTa4TfI6RvWcxZOqLjk7nSNwArqrSYTph2eWgr8IE98a0eHvpKDSJm2dyucVvxJYSAp0Xd4jQPw3%2foVSBwkJN6fN7i1pn68UZGzAZd6sW8wAtomodLKQZxZ1wshtVp0scluKC9KhTqRrs62Tu2Y69IgnuS1%2b0VVpau7ZQS9MtfLqGvnacwiZX20L4wLaAPIO984KLQhewQ9mhPYbKUqYw2wqlq75NFqrLZJSFUJkBvhIwZJbNwPjLXZ1F%2bD22rlkww7df1wLtGBdIagvMlSv%2bgmg2goFkVSHj8x54tYXshA%2fCTG%2fYGTyy2k%2fXxAd8LLujHus5SZzd",
+    expirationTime: null,
+    keys:{
+        p256dh:"BOEG_pqp-rEP5cxwaCb6VNCkM2qz48Ciso5TfZcb5oVYYGdrTd2_qmCY7iHvMvozXhnBOm7DE6GGG0OIc2KLPuM",
+        auth:"OM3yhMWPbpyMtrYktDz6-A"
+    }
+}
+
+
+
 
 
 //   push.sendNotification(sub, 'testing message')
@@ -112,5 +129,7 @@ let sub8 = {
 //   push.sendNotification(sub4, 'testing message')
 //   push.sendNotification(sub5, 'testing message')
 //   push.sendNotification(sub6, 'testing message')
-  push.sendNotification(sub7, 'testing message')
-  push.sendNotification(sub8, 'testing message')
+//   push.sendNotification(sub7, 'testing message')
+//   push.sendNotification(sub8, 'testing message')
+//   push.sendNotification(sub9, 'testing message')
+  push.sendNotification(sub10, 'testing message')
