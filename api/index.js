@@ -57,8 +57,9 @@ app.post("/api/upload", upload.single("file"), (req,res) => {
     res.status(200).json("File successfully uploaded!");
 });
 
-const publicVapidKey = "BM0wVQoiwffifZXJTa1aLRyW2Y1roTvqIJatTeo8beWOPF_IAdLbtQp5bzfmAAVBofQm6avPuwBjQ31_ANkLVJE";
-const privateVapidKey = "0n5v0_EeOrYk1mT-XJmLAZbw7Zvgo4Ttk9jx1I_cIOo";
+const publicVapidKey =
+"BJthRQ5myDgc7OSXzPCMftGw-n16F7zQBEN7EUD6XxcfTTvrLGWSIG7y_JxiWtVlCFua0S8MTB5rPziBqNx1qIo";
+const privateVapidKey = "3KzvKasA2SoCxsp0iIG_o9B0Ozvl1XDwI63JRKNIWBM";
 
 webpush.setVapidDetails(
   "mailto:test@test.com",
@@ -69,7 +70,7 @@ webpush.setVapidDetails(
 app.post("/subscribe", (req, res) => {
     const subscription = req.body;
     res.status(201).json({});
-    const payload = JSON.stringify({ title: "New blog/podcast added!" });
+    const payload = JSON.stringify({ title: "New Products!!!" });
     webpush
       .sendNotification(subscription, payload)
       .catch(err => console.error(err));
