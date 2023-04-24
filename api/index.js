@@ -58,8 +58,8 @@ app.post("/api/upload", upload.single("file"), (req,res) => {
 });
 
 const publicVapidKey =
-  "BPtiXL0JW6zPJKrydB_6lJIL2kMT4YI-vqTc7UeyPhd7pG41ziXIBI5rLqT5duCQa46rNtbVkk4QUwh0U-usgNA";
-const privateVapidKey = "XcyKCexSEuAUsx46Kt28RlErzB59ACu-4-7k_Bhmi1I";
+"BJthRQ5myDgc7OSXzPCMftGw-n16F7zQBEN7EUD6XxcfTTvrLGWSIG7y_JxiWtVlCFua0S8MTB5rPziBqNx1qIo";
+const privateVapidKey = "3KzvKasA2SoCxsp0iIG_o9B0Ozvl1XDwI63JRKNIWBM";
 
 webpush.setVapidDetails(
   "mailto:test@test.com",
