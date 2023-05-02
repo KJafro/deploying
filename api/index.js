@@ -77,7 +77,7 @@ app.post("/subscribe", (req, res) => {
       .catch(err => console.error(err));
   });
 
-  app.get('/run-script', (req, res) => {
+  app.post('/run-script', (req, res) => {
     const script = spawn('node', ['./push.js']);
   
     script.stdout.on('data', (data) => {
@@ -92,7 +92,7 @@ app.post("/subscribe", (req, res) => {
       console.log(`child process exited with code ${code}`);
     });
   
-    res.send('Script executed!');
+    res.status(200).end();
   });
 
 app.use("/api/auth", authRoute)
