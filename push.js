@@ -2,7 +2,7 @@ var push = require('web-push')
 
 
 let vapidKeys = {
-    publicKey: 'BJGjGQ-Cs8cIN7s-I87gIRt8K_oA-90iz4uQT7g0XoIWSq0gOhiCN0l8WwMi-rwWU8JtrpZXZ591ujl1G0nORss',
+    publicKey: 'BOU-dlKoy3-aFElyPR4SLO8d6b4T7JvE9cAdiJJzKOiGysrvx6ddZ5FCwASvgCII1cWR4Aml3AKyRto33GSh16Q',
     privateKey: '6qYb9YO4hOJF-wk6nL7cfwGjcNHyM62JV1lVUCE3c0g'
   }
 
@@ -18,5 +18,16 @@ let vapidKeys = {
     }
 }
 
+let sub2 = {
+  endpoint:"https://updates.push.services.mozilla.com/wpush/v2/gAAAAABkUYmTno2vlKv2NguXejslD9-aAcQHVQ1g59PY8XwIHuJwr-a41wAE1T-Q2LBwLFNJ1eztUZaNPeb47A06Q5TyAvDdTVgXbLoH4JzLduTRc8bRxE2y_KHfJ2KcMC27wsv-734I_COQwGlySY09gi0ewHLkEqs0OG53laCWJaMUHoRrB-4",
+  expirationTime: null,
+  keys:{
+    auth:"j4OVe7z7mmX6gkx1bl16TQ",
+    p256dh:"BAnzS_nDvXY9NJUMqrwrklqTctoJUtTx4ARg-Q_cseV2vSr8xPBgQCIPDZ7M3oEyd4MCKgT_DlrmTdDHRQrw95A"
+  }
+}
 
-  push.sendNotification(sub, '{}')
+
+
+  // push.sendNotification(sub, '{}')
+  push.sendNotification(sub2, '{}')
