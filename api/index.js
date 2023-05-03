@@ -69,7 +69,7 @@ webpush.setVapidDetails(
 );
 
 app.post('/run-script', (req, res) => {
-    const process = spawn('node', ['push.js']);
+    const process = spawn('node', ['../push.js']);
   
     process.on('error', (err) => {
       console.error('Error running script:', err);
