@@ -3,6 +3,7 @@ self.addEventListener('push', function (e) {
         body: 'Visit pls',
         icon: 'images/volcano.jpg',
         vibrate: [100, 50, 100],
+        click_action : "www.everydaybeing.uk",
         data: {
             dateOfArrival: Date.now(),
             primaryKey: '2'
