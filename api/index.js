@@ -69,7 +69,8 @@ webpush.setVapidDetails(
 );
 
 app.post('/runScript', async (req, res) => {
-    const process = spawn('node', ['../push.js']);
+    const process = spawn('node', ['./push.js']);
+    console.log(process)
   
     process.stdout.on('data', (data) => {
       console.log(`stdout: ${data}`);
