@@ -15,6 +15,7 @@ const cors = require ("cors")
 const PORT = process.env.PORT || 5000;
 const cloudinary = require('./cloudinary/cloudinary').v2;
 app.use(bodyParser.json());
+const { spawn } = require('child_process');
 
 app.use(
     cors({
@@ -66,6 +67,23 @@ webpush.setVapidDetails(
   publicVapidKey,
   privateVapidKey
 );
+
+app.post('/runScript', async (req, res) => {
+    const process = spawn('node', ['./push.js']);
+  
+    process.stdout.on('data', (data) => {
+      console.log(`stdout: ${data}`);
+    });
+  
+    process.stderr.on('data', (data) => {
+      console.error(`stderr: ${data}`);
+    });
+  
+    process.on('close', (code) => {
+      console.log(`child process exited with code ${code}`);
+      res.json({ success: true });
+    });
+  });
 
 app.post("/subscribe", (req, res) => {
     const subscription = req.body;
