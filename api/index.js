@@ -68,23 +68,20 @@ webpush.setVapidDetails(
   privateVapidKey
 );
 
-app.post('/runScript', async (req, res) => {
-    const scriptPath = path.join(__dirname, 'push.js');
-    const process = spawn('node', [scriptPath]);
-  
-    process.stdout.on('data', (data) => {
-      console.log(`stdout: ${data}`);
-    });
-  
-    process.stderr.on('data', (data) => {
-      console.error(`stderr: ${data}`);
-    });
-  
-    process.on('close', (code) => {
-      console.log(`child process exited with code ${code}`);
-      res.json({ success: true });
-    });
+const { exec } = require('child_process');
+
+app.get('/run-script', (req, res) => {
+  exec('node push.js', (error, stdout, stderr) => {
+    if (error) {
+      console.error(`exec error: ${error}`);
+      res.status(500).send({ error: 'An error occurred' });
+      return;
+    }
+    console.log(`stdout: ${stdout}`);
+    console.error(`stderr: ${stderr}`);
+    res.send({ success: true });
   });
+});
 
 app.post("/subscribe", (req, res) => {
     const subscription = req.body;
