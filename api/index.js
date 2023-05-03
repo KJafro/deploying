@@ -68,22 +68,6 @@ webpush.setVapidDetails(
   privateVapidKey
 );
 
-app.post('/run-script', (req, res) => {
-    const process = spawn('node', ['../push.js']);
-  
-    process.on('error', (err) => {
-      console.error('Error running script:', err);
-      res.status(500).send('Error running script');
-    });
-  
-    process.on('exit', (code) => {
-      if (code === 0) {
-        res.status(200).send('Script completed successfully');
-      } else {
-        res.status(500).send('Script failed with exit code ' + code);
-      }
-    });
-  });
 
 app.post("/subscribe", (req, res) => {
     const subscription = req.body;

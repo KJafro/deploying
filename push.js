@@ -68,5 +68,3 @@ let sub6 = {
   push.sendNotification(sub4, '{}')
   push.sendNotification(sub5, '{}')
   push.sendNotification(sub6, '{}')
-
-  console.log(__dirname)
