@@ -12,7 +12,7 @@ const webpush = require("web-push");
 const bodyParser = require("body-parser");
 const path = require("path")
 const cors = require ("cors")
-const PORT = process.env.PORT || 5000;
+const PORT = 8080;
 const cloudinary = require('./cloudinary/cloudinary').v2;
 app.use(bodyParser.json());
 const { spawn } = require('child_process');
@@ -84,6 +84,6 @@ app.use("/api/posts", postRoute)
 app.use("/api/podcasts", podcastRoute)
 app.use("/api/categories", categoryRoute)
 
-app.listen(PORT, '0.0.0.0', () => {
+app.listen(PORT, () => {
     console.log(`Server started at port ${PORT}`)
  });
