@@ -12,7 +12,7 @@ const webpush = require("web-push");
 const bodyParser = require("body-parser");
 const path = require("path")
 const cors = require ("cors")
-const PORT = 8080;
+const PORT = process.env.PORT || 3000;
 const cloudinary = require('./cloudinary/cloudinary').v2;
 app.use(bodyParser.json());
 const { spawn } = require('child_process');
@@ -38,7 +38,7 @@ app.use("/images", express.static(path.join(__dirname, "/images")))
 //   })
 
 mongoose.set('strictQuery', true);
-mongoose.connect(process.env.MONGO_URI, {
+mongoose.connect('mongodb+srv://admin:admin@everydaybeing.jtw7i4x.mongodb.net/everydaybeing?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology:true,
 }).then(console.log("Connected to DB!!!!!"))
@@ -84,6 +84,6 @@ app.use("/api/posts", postRoute)
 app.use("/api/podcasts", podcastRoute)
 app.use("/api/categories", categoryRoute)
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server started at port ${PORT}`)
  });
