@@ -60,7 +60,7 @@ router.post("/", async (req, res) => {
   //GET POST
 router.get("/:title", async (req, res) => {
     try {
-      const podcast = await Podcast.findOne({title: req.params.id});
+      const podcast = await Podcast.findOne({title: req.params.title});
       res.status(200).json(podcast);
     } catch (err) {
       res.status(500).json(err);
